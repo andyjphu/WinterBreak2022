@@ -12,8 +12,8 @@ class Factory():
     def __repr__(self):
         raw_stockf = helpers.truncate(self.raw_stock)
         manufactured_stockf = helpers.truncate(self.manufactured_stock)
-        throughput_efficiencyf = helpers.truncate(self.throughput_efficiency*100,3)
-        return f"RS: {raw_stockf}    MS: {manufactured_stockf}     $: {self.capital}    EF: {throughput_efficiencyf}%"
+        throughput_efficiencyf = helpers.truncate(self.throughput_efficiency*100,3) #  424   ⧅ ⸔
+        return f"𓆭 : {raw_stockf}    ⧅ : {manufactured_stockf}     $ : {self.capital}    ◷ : {throughput_efficiencyf}%"
         
     def manufacture(self):
         self.throughput_efficiency = self.base_throughput_efficiency / (self.manufactured_stock+1)
