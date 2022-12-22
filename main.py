@@ -19,6 +19,14 @@ sawmill = Factory("sawmill")
 #initialization stuff
 
 
+
+
+def spawn_random_buffer():
+    print()
+    for i in range(50):
+        print(random.choice(['▖', '▗', '▘', '▙', '▚', '▛', '▜', '▝', '▞', '▟', '■']), end="")
+    print()
+
 while True:
     os.system("Clear")
     sawmill.raw_stock += random.randint(-1,3)
@@ -32,9 +40,12 @@ while True:
             print(active_factory_image_2)
         elif times_manufactured %3 == 2:
             print(active_factory_image_3)
+            
+        spawn_random_buffer()
         print(f"successful manufacture, raw stock is now {helpers.truncate(sawmill.raw_stock)}, and manufactured stock is at {helpers.truncate(sawmill.manufactured_stock)}")
     else:
         print(inactive_factory_image)
+        spawn_random_buffer()
         print(f"unsuccessful manufacture attempt, not enough raw resources")
     
     if "exit" in input("type anything to continue: "):
