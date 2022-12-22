@@ -23,8 +23,11 @@ sawmill = Factory("sawmill")
 
 def spawn_random_buffer():
     print()
-    for i in range(50):
-        print(random.choice(['▖', '▗', '▘', '▙', '▚', '▛', '▜', '▝', '▞', '▟', '■']), end="")
+    for i in range(25):
+        print(random.choice(["꠵꠵"," "]),end="")
+        #['▖', '▗', '▘', '▙', '▚', '▛', '▜', '▝', '▞', '▟', '■']), end="")
+        #['⬥','⬦','⬧','⬨','⬩','⬪','⬫']
+        #"═","╬"
     print()
 
 while True:
@@ -42,7 +45,7 @@ while True:
             print(active_factory_image_3)
             
         spawn_random_buffer()
-        print(f"successful manufacture, raw stock is now {helpers.truncate(sawmill.raw_stock)}, and manufactured stock is at {helpers.truncate(sawmill.manufactured_stock)}")
+        print(f"𓆭 {helpers.truncate(sawmill.raw_stock)}, and manufactured stock is at {helpers.truncate(sawmill.manufactured_stock)}")
     else:
         print(inactive_factory_image)
         spawn_random_buffer()
