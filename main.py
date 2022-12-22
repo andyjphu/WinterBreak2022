@@ -1,4 +1,5 @@
 from factory import *
+from helpers import helpers
 import math, pygame, random, os
 
 
@@ -27,10 +28,11 @@ while True:
             print(active_factory1_image)
         else:
             print(active_factory_image)
-        print(f"successful manufacture, raw stock is now {sawmill.raw_stock}, and manufactured stock is at {sawmill.manufactured_stock}")
+        print(f"successful manufacture, raw stock is now {helpers.truncate(sawmill.raw_stock)}, and manufactured stock is at {helpers.truncate(sawmill.manufactured_stock)}")
     else:
         print(inactive_factory_image)
         print(f"unsuccessful manufacture attempt, not enough raw resources")
+    
     if "exit" in input("type anything to continue: "):
         exit()
         #os.system("exit()")
