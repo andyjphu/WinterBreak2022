@@ -5,3 +5,5 @@ download a unicode + UTF-8 table
 what are surrogate pairs in unicode
 
 wtf is 0x130ba or as in ordinal 78010
+
+command click on a variable to figure out where it's being defined
