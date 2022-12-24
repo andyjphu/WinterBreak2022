@@ -7,3 +7,7 @@ what are surrogate pairs in unicode
 wtf is 0x130ba or as in ordinal 78010
 
 command click on a variable to figure out where it's being defined
+
+python3 -m pygame.docs for pygame docs
+
+

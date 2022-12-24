@@ -16,7 +16,7 @@ class Factory():
         return f"𓆭 : {raw_stockf}    ⧅ : {manufactured_stockf}     $ : {self.capital}    ◷ : {throughput_efficiencyf}%"
         
     def manufacture(self):
-        self.throughput_efficiency = self.base_throughput_efficiency / (self.manufactured_stock+1)
+        self.throughput_efficiency = (self.base_throughput_efficiency / (self.manufactured_stock+1))*0.5 + (0.5)
         
         if self.raw_stock > 0:
             self.raw_stock -= 1 * self.throughput_efficiency
