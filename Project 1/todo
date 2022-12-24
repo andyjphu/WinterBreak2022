@@ -11,3 +11,7 @@ command click on a variable to figure out where it's being defined
 python3 -m pygame.docs for pygame docs
 
 
+does tkinter inherit from pygame or does pygame inherit from tkinter and how does turtle py relate to all this
+
+
+bouncing ball game where a minimized screen is the boundary for a ball

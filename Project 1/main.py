@@ -1,38 +1,53 @@
-from helpers import helpers
-import math, pygame, factory, random, os, companion_art, market
+import sys, pygame
+pygame.init()
+
+size = width, height = 500, 500
+speed = [2, 2]
+black = 100, 0, 0
+
+screen = pygame.display.set_mode(size)
+
+ball = pygame.image.load("intro_ball.gif")
+ballrect = ball.get_rect()
+
+#surf = pygame.surface.Surface((500,500))
+magnet_surface = pygame.surface.Surface((10,10)) # you move the surface, not the drawings inside the surface?
+
+magnet_rect = pygame.draw.rect(magnet_surface,(255,0,255),(0,0,10,10),1,1)#pygame.draw.circle(world_screen_surface, (255,0,255),(501,500), 10,10)
 
 
-times_manufactured = 0
-
-companion_art_manager = companion_art.companion_art()
-sawmill = factory.Factory("sawmill")
 
 
 
+magnet_vy = 1
+magnet_vx = 1
+magnet_ay = -1
+magnet_ax = 1
 while True:
-    os.system("Clear")
-    sawmill.raw_stock += random.randint(-1,3)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: sys.exit()
     
-    if sawmill.manufactured_stock>0:
-        buy_order_quantity = (int(sawmill.manufactured_stock * random.choice([1, 0.5, 0.25, 0.25, 0.1, 0.1,0,0,0, 0,0,0,0])))
-        sawmill.manufactured_stock-= buy_order_quantity
-        sawmill.capital += buy_order_quantity
-    
-    print(sawmill)
-    if sawmill.manufacture():
+    magnet_vx += magnet_ax
+    magnet_vy += magnet_vy
         
-        companion_art_manager.print_active_factory()
-        companion_art_manager.print_boxes(int(sawmill.manufactured_stock //1 ))
-        print(f"𓆭 -> ⧅ : {helpers.truncate(sawmill.throughput_efficiency)}") 
-    else:
-        
-        companion_art_manager.print_inactive_factory()
-        companion_art_manager.print_boxes(int(sawmill.manufactured_stock // 1))
-        print(f"unsuccessful manufacture attempt, not enough raw resources")
+    magnet_rect = magnet_rect.move(magnet_vx,magnet_vx)
+    screen.blit(magnet_surface,magnet_rect)
+    #magnet.centerx += 10
+    pygame.display.flip()
+
+    pygame.time.wait(250)
+
+#     ballrect = ballrect.move(speed)
+#     if ballrect.left < 0 or ballrect.right > width:
+#         speed[0] = -speed[0]
+#     if ballrect.top < 0 or ballrect.bottom > height:
+#         speed[1] = -speed[1]
+
+#     screen.fill(black)
     
-    if "exit" in input("[ENTER] to manufacture, 'm' to visit the market: "):
-        exit()
-
-
-
-#Ctrl C to trigger mac keyboardinterrupt (unix?)
+#     #magnet_rect = 
+#     magnet_rect = magnet_rect.move(1,-1)
+#     screen.blit(ball, ballrect)
+#     screen.blit(magnet_surface,magnet_rect)
+#     #magnet.centerx += 10
+#     pygame.display.flip()
