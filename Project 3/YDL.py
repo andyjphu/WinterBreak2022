@@ -22,3 +22,4 @@ if __name__=='__main__':
     
     #youtube-dl -i PLwJ2VKmefmxpUJEGB1ff6yUZ5Zd7Gegn2
     #youtube-dl -i --no-check-certificate -f bestaudio PL6PRFQKbF3ser6ymt0eiMtaktosaD_k5Y 
+    #ftransc -f mp3 "German national anthem, the most beautiful version.-xeEAkME6nSM.webm"
